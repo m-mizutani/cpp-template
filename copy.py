@@ -11,7 +11,6 @@ def main():
     new_name = sys.argv[1]
     copy_files = [
         'CMakeLists.txt',
-        'README.md',
         'LICENSE.md',
         'test//gtest-all.cc',
         'test/gtest.h',
@@ -38,7 +37,8 @@ def main():
         for line in open(src, 'r'):
             ofd.write(line.replace('cpptemplate', new_name)
                       .replace('CPPTEMPLATE', new_name.upper()))
-        
-        
+
+    readme = '{0}\n===========\n'.format(new_name)
+    open(os.path.join(new_name, 'README.md'), 'w').write(readme)
 
 if __name__ == '__main__': main()
