@@ -52,7 +52,7 @@ ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 INSTALL(TARGETS cpptemplate LIBRARY DESTINATION lib)
-INSTALL(FILES   "src/cpptemplate/cpptemplate.hpp" DESTINATION include/)
+INSTALL(FILES   "src/cpptemplate.hpp" DESTINATION include/)
 INSTALL(FILES ${HEADERS} DESTINATION include/cpptemplate)
 
 # Test code
