@@ -1,0 +1,24 @@
+language: cpp
+
+compiler:
+  - clang
+  - gcc
+cache:
+  - apt
+os:
+  - osx
+  - linux
+
+before_install:
+  # update packages
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update -qq -y; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -y build-essential cmake libtool libpcap0.8 libpcap-dev ; fi
+#  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew update ; fi
+#  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install msgpack libev ; fi
+       
+before_script:  
+  - cmake .
+
+script:
+  - make
+
