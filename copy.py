@@ -10,7 +10,7 @@ def main():
     
     new_name = sys.argv[1]
     copy_files = [
-        '.gitignore'.
+        '.gitignore',
         '.travis.yml',
         'CMakeLists.txt',
         'LICENSE.md',
